@@ -12,7 +12,7 @@ app.post("/edit-image", upload.single("image"), async (req, res) => {
     const form = new FormData();
     form.append("image", fs.createReadStream(req.file.path));
     form.append("prompt", req.body.prompt);
-    form.append("model", "gpt-image-1");
+    form.append("model", "dall-e-2");
 
     const response = await fetch("https://api.openai.com/v1/images/edits", {
       method: "POST",
